@@ -1,0 +1,25 @@
+# Spring Boot + Spring LDAP configuration application.yml
+
+spring:
+  ldap:
+
+    # Spring LDAP
+    #
+    # In this example we use an embedded ldap server. When using a real one,
+    # you can configure the settings here.
+    #
+    # urls: ldap://localhost:12345
+    # base: dc=memorynotfound,dc=com
+    # username: uid=admin
+    # password: secret
+
+    # Embedded Spring LDAP
+    embedded:
+      base-dn: dc=springframework,dc=org
+      credential:
+        username: uid=ben
+        password: benspassword
+      ldif: classpath:test-server.ldif
+      port: 9389
+      validation:
+        enabled: false
